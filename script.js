@@ -12,17 +12,17 @@ else if(select !==  select){
 alert('Write a number')}
 
 
-function addWater(count){
+function Water(count){
 return new Promise((resolve, reject) => {
 setTimeout(()=>{
-resolve(`${select} Wather,`)   
+resolve(`${select}  cups    Water,`)   
 },parseInt(Math.random() * 500 * count))})   }
 
-function addCoffee(count){
+function Coffee(count){
 return new Promise((resolve, reject) => {
 setTimeout(()=>{
 if(select <= 5){
-resolve(`${select} Coffee,`)   }
+resolve(`${select}  spoon  Coffee,`)   }
 else{
 reject(`Not enough Coffee...`)
 document.writeln('Not enough Coffee...')
@@ -31,11 +31,11 @@ alert('Not enough Coffee...')},800)
 }},parseInt(Math.random() * 500 * count))})   
 }
 
-function addSuger(count){
+function Suger(count){
 return new Promise((resolve, reject) => {
 setTimeout(()=>{
 if(select <= 3){
-resolve(`${select} Suger`)
+resolve(`${select} spoon  Suger`)
 }
 else{
 reject(`Not enough Suger...`)
@@ -46,28 +46,30 @@ alert('Sorry  sugar is not enough')},800)}
 })
 }
 
-function setOnFier(){
+function Fire(){
 return new Promise((resolve, reject) => {
 setTimeout(()=>{
-resolve(`${select} SetOnFier`)    
+resolve("SetOnFier")    
 }, parseInt(Math.random() * 1500 ))})}
 
-
-async function makeCoffee(count){
-let d1 = await addWater(count)
-document.writeln(d1)
+async function coffeeՕrder(count){
+let forWater = await Water(count)
+document.writeln(forWater)
+document.writeln('<hr>')
 document.writeln('<br>')
-let d2 = await addCoffee(count)
-document.writeln(d2)
+let forCoffee = await Coffee(count)
+document.writeln(forCoffee)
+document.writeln('<hr>')
 document.writeln('<br>')
-let d3 = await addSuger(count)
-document.writeln(d3)
+let forSuger = await Suger(count)
+document.writeln(forSuger)
+document.writeln('<hr>')
 document.writeln('<br>')
-let d4 = await setOnFier();
-document.writeln(d4)
-setTimeout(()=>{alert('Your Coffe is ready')},1000)
+let forFire = await Fire();
+document.writeln(forFire)
+setTimeout(()=>{alert('Your Coffee is ready')},1000)
 }
-makeCoffee(3)
+coffeeՕrder(3)
 
 
 
